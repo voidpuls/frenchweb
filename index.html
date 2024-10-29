@@ -4,122 +4,121 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Évasion de la Maison Hantée</title>
-   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
-<style>
-    body {
-        background-image: url('https://img.freepik.com/premium-photo/halloween-background-with-haunted-house-forest_900706-9965.jpg'); /* Add a spooky background image */
-        background-size: cover;
-        color: #ffffff;
-        text-align: center;
-        animation: fadeIn 1s ease-in-out;
-        overflow: hidden;
-    }
-    h1 {
-        font-family: 'Creepster', cursive; /* Use Creepster font */
-        margin-top: 20px;
-        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-    }
-    .slide {
-        display: none;
-        padding: 20px;
-        animation: slideIn 0.5s ease;
-    }
-    .active {
-        display: block;
-    }
-    button {
-        margin: 10px;
-        padding: 10px 20px;
-        background-color: #ff8c00; /* Pumpkin color */
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 16px;
-        transition: background-color 0.3s, transform 0.3s;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    }
-    button:hover {
-        background-color: #ff4500; /* Darker pumpkin color */
-        transform: scale(1.05);
-    }
-    @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
-    }
-    @keyframes slideIn {
-        from { transform: translateY(20px); opacity: 0; }
-        to { transform: translateY(0); opacity: 1; }
-    }
-    iframe {
-        margin-top: 20px;
-        border: 5px solid #ff4500; /* Add a spooky border to the video */
-        border-radius: 10px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    }
-</style>
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('https://img.freepik.com/premium-photo/halloween-background-with-haunted-house-forest_900706-9965.jpg');
+            background-size: cover;
+            color: #ffffff;
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+            overflow: hidden;
+        }
+        h1 {
+            font-family: 'Creepster', cursive;
+            margin-top: 20px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+        .slide {
+            display: none;
+            padding: 20px;
+            animation: slideIn 0.5s ease;
+        }
+        .active {
+            display: block;
+        }
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            background-color: #ff8c00;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s, transform 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+        button:hover {
+            background-color: #ff4500;
+            transform: scale(1.05);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideIn {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        iframe {
+            margin-top: 20px;
+            border: 5px solid #ff4500;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+    </style>
 </head>
 <body>
     <h1>Évasion de la Maison Hantée avec la Maison d'Être</h1>
-<div id="slides">
-    <div class="slide active">
-        <h2>Entrée - Qui suis-je ?</h2>
-        <p>Je suis entré dans la maison, et la porte s'est fermée derrière moi.</p>
-        <p>Une nuit, j'etais coince dans l'entree sombre, entendant des rires étranges venant de l'étage.</p>
+    <div id="slides">
+        <div class="slide active">
+            <h2>Entrée - Qui suis-je ?</h2>
+            <p>Je suis entré dans la maison, et la porte s'est refermée derrière moi.</p>
+            <p>Je suis devenu de plus en plus inquiet en entendant des rires étranges autour de moi.</p>
+        </div>
+        <div class="slide">
+            <h2>La Cuisine</h2>
+            <p>Je suis descendu dans la cuisine et j'ai vu un spectre passer devant moi.</p>
+            <p>Effrayé, je suis remonté en hâte, espérant trouver un refuge ailleurs.</p>
+        </div>
+        <div class="slide">
+            <h2>Le Salon</h2>
+            <p>Je suis retourné au salon pour échapper aux voix, mais une ombre mystérieuse m'a suivi.</p>
+            <p>Le miroir me montrait quelque chose de sinistre… devais-je rester?</p>
+        </div>
+        <div class="slide">
+            <h2>L’Escalier</h2>
+            <p>Je suis monté dans l'escalier, essayant de percer le mystère de cette maison.</p>
+            <p>Chaque marche me semblait être un écho de ceux qui y étaient passés avant moi.</p>
+        </div>
+        <div class="slide">
+            <h2>Le Grenier</h2>
+            <p>Je suis arrivé dans le grenier et ai découvert des souvenirs oubliés, recouverts de poussière.</p>
+            <p>J’étais résolu à trouver la clé du mystère, mais un bruit m’a stoppé net.</p>
+        </div>
+        <div class="slide">
+            <h2>La Salle de Bain</h2>
+            <p>Je suis allé dans la salle de bain, où un message étrange apparaissait sur le miroir.</p>
+            <p>Je suis resté figé un instant, l'angoisse grandissant à chaque mot mystérieux.</p>
+        </div>
+        <div class="slide">
+            <h2>Le Balcon</h2>
+            <p>Je suis sorti sur le balcon pour tenter de fuir, mais une brume menaçante m’entourait.</p>
+            <p>Je sentais que je devais m'en aller vite avant que la nuit ne tombe complètement.</p>
+        </div>
+        <div class="slide">
+            <h2>La Cave</h2>
+            <p>Je suis tombé dans la cave en trébuchant sur une trappe cachée.</p>
+            <p>Dans l’obscurité, j'ai entendu des murmures approcher; je devais me relever vite.</p>
+        </div>
+        <div class="slide">
+            <h2>La Bibliothèque Secrète</h2>
+            <p>Je suis retourné dans la bibliothèque, où un passage caché s'est révélé derrière un étagère.</p>
+            <p>La porte s'est ouverte, révélant une sortie, et j’ai avancé prudemment vers ma liberté.</p>
+        </div>
+        <div class="slide">
+            <h2>La Sortie</h2>
+            <p>Je suis parti de la maison en courant, échappant enfin aux fantômes du passé.</p>
+            <p>À l'extérieur, je pouvais enfin respirer, heureux d'avoir survécu à l'épreuve.</p>
+        </div>
     </div>
-    <div class="slide">
-        <h2>La Cuisine</h2>
-        <p>Je suis descendu dans la cuisine et j'ai vu un squelette préparer une potion.</p>
-        <p>Effrayé par cette scène, Terrifiee  je devais trouver sortie une rapidement.</p>
-    </div>
-    <div class="slide">
-        <h2>Le Salon</h2>
-        <p>Je suis passé par le salon où un miroir a révélé un message mystérieux : « Fuis ! »</p>
-        <p>J’avance prudemment, me demandant qui a laissé ce message.</p>
-    </div>
-    <div class="slide">
-        <h2>L’Escalier</h2>
-        <p>Je suis monte dans l'escalier pour explorer l'étage.</p>
-        <p>Les escaliers craquent sous mes pieds, et j’ai l’impression d’être suivi.</p>
-    </div>
-    <div class="slide">
-        <h2>Le Grenier</h2>
-        <p>Je suis entré dans le grenier où un vieux tableau a bougé tout seul.</p>
-        <p>Je recule en vitesse, mais l’air glacial me paralyse un instant.</p>
-    </div>
-    <div class="slide">
-        <h2>La Salle de Bain</h2>
-        <p>Je suis allé dans la salle de bain, et le miroir était recouvert de vapeur avec un message effrayant.</p>
-        <p>Je crie pour appeler de l’aide, car ce message semble me menacer directement.</p>
-    </div>
-    <div class="slide">
-        <h2>Le Balcon</h2>
-        <p>Je suis sorti sur le balcon pour chercher une échelle et descendre.</p>
-        <p>En cherchant une échelle, j’aperçois une ombre inquiétante qui me regarde.</p>
-    </div>
-    <div class="slide">
-        <h2>La Cave</h2>
-        <p>Je suis tombé dans la cave après avoir glissé sur une marche cassée.</p>
-        <p>Dans le noir, des bruits étranges se rapprochent; je dois me lever rapidement.</p>
-    </div>
-    <div class="slide">
-        <h2>La Bibliothèque Secrète</h2>
-        <p>Je retourne dans la bibliothèque pour chercher un passage secret.</p>
-        <p>Finalement, je trouve un levier, et je découvre une porte cachée.</p>
-    </div>
-    <div class="slide">
-        <h2>La Sortie</h2>
-        <p>Je pars en courant par la sortie secrète et échappe aux fantômes.</p>
-        <p>Une fois à l’extérieur, je reprends mon souffle, heureux(-euse) d’avoir échappé à la maison hantée.</p>
-    </div>
-</div>
 
-<button id="prevBtn" onclick="changeSlide(-1)">Précédent</button>
-<button id="nextBtn" onclick="changeSlide(1)">Suivant</button><br>
+    <button id="prevBtn" onclick="changeSlide(-1)">Précédent</button>
+    <button id="nextBtn" onclick="changeSlide(1)">Suivant</button><br>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/-AN2wZCRLQc?si=aFYaFVIx0Jd7LUcT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/-AN2wZCRLQc?si=aFYaFVIx0Jd7LUcT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     <script>
         let currentSlide = 0;
         const slides = document.querySelectorAll('.slide');
