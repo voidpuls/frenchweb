@@ -3,14 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Échappez de la Maison Hantée</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Évasion de la Maison Hantée</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #282c34;
+            color: #ffffff;
+            text-align: center;
+        }
+        h1 {
+            margin-top: 20px;
+        }
+        .slide {
+            display: none;
+            padding: 20px;
+        }
+        .active {
+            display: block;
+        }
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            background-color: #61dafb;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #21a1f1;
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Échappez de la Maison Hantée avec la Maison d'Être</h1>
-        <p>Bienvenue, détectives! Vous êtes piégés dans une maison hantée. Décrivez vos actions en utilisant les verbes de la Maison d'Être au passé composé pour vous échapper!</p>
-        <button onclick="window.location.href='room1.html'">Commencez l'aventure</button>
+
+<h1>Évasion de la Maison Hantée avec la Maison d'Être</h1>
+<div id="slides">
+    <div class="slide active">
+        <h2>Entrée - Qui sommes-nous ?</h2>
+        <p>Nous sommes entrés dans la maison, et la porte s'est fermée derrière nous.</p>
+        <p>Nous nous retrouvons coincés dans l’entrée sombre, entendant des rires étranges venant de l'étage.</p>
     </div>
+    <div class="slide">
+        <h2>La Cuisine</h2>
+        <p>Nous sommes descendus dans la cuisine et avons vu un squelette préparer une potion.</p>
+        <p>Effrayés par cette scène, nous devons trouver une sortie rapidement.</p>
+    </div>
+    <div class="slide">
+        <h2>Le Salon</h2>
+        <p>Je suis passé(e) par le salon où un miroir a révélé un message mystérieux : « Fuyez ! »</p>
+        <p>Nous avançons prudemment, nous demandant qui a laissé ce message.</p>
+    </div>
+    <div class="slide">
+        <h2>L’Escalier</h2>
+        <p>Nous sommes montés dans l'escalier pour explorer l'étage.</p>
+        <p>Les escaliers craquent sous nos pieds, et nous avons l’impression d’être suivis.</p>
+    </div>
+    <div class="slide">
+        <h2>Le Grenier</h2>
+        <p>Nous sommes entrés dans le grenier où un vieux tableau a bougé tout seul.</p>
+        <p>Nous avons reculé en vitesse, mais l’air glacial nous paralyse un instant.</p>
+    </div>
+    <div class="slide">
+        <h2>La Salle de Bain</h2>
+        <p>Je suis allé(e) dans la salle de bain, et le miroir était recouvert de vapeur avec un message effrayant.</p>
+        <p>Je crie pour appeler mes coéquipiers, car ce message semble nous menacer directement.</p>
+    </div>
+    <div class="slide">
+        <h2>Le Balcon</h2>
+        <p>Nous sommes sortis sur le balcon pour chercher une échelle et descendre.</p>
+        <p>En cherchant une échelle, nous apercevons une ombre inquiétante qui nous regarde.</p>
+    </div>
+    <div class="slide">
+        <h2>La Cave</h2>
+        <p>Nous sommes tombés dans la cave après avoir glissé sur une marche cassée.</p>
+        <p>Dans le noir, des bruits étranges se rapprochent; nous devons nous lever rapidement.</p>
+    </div>
+    <div class="slide">
+        <h2>La Bibliothèque Secrète</h2>
+        <p>Je suis retourné(e) dans la bibliothèque pour chercher un passage secret.</p>
+        <p>Finalement, je trouve un levier, et nous découvrons une porte cachée.</p>
+    </div>
+    <div class="slide">
+        <h2>La Sortie</h2>
+        <p>Nous sommes partis en courant par la sortie secrète et avons échappé aux fantômes.</p>
+        <p>Une fois à l’extérieur, nous reprenons notre souffle, heureux d’avoir échappé à la maison hantée.</p>
+    </div>
+</div>
+
+<button id="prevBtn" onclick="changeSlide(-1)">Précédent</button>
+<button id="nextBtn" onclick="changeSlide(1)">Suivant</button>
+
+<script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+
+    function changeSlide(n) {
+        slides[currentSlide].classList.remove('active');
+        currentSlide = (currentSlide + n + slides.length) % slides.length;
+        slides[currentSlide].classList.add('active');
+    }
+</script>
+
 </body>
 </html>
