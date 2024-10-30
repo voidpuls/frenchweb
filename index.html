@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
     <style>
         body {
-            background-image: url('https://img.freepik.com/premium-photo/halloween-background-with-haunted-house-forest_900706-9965.jpg');
+            background-image: url('https://media.gettyimages.com/id/1419722403/video/3d-animation-4k-spooky-dark-forest-with-fog-or-cloud-and-blue-cool-moon-light-for-halloween.jpg?s=640x640&k=20&c=qpxTsTR_JDTZoef7GKcynrhFuPv-QdtlFP-Se6jLLWs=');
             background-size: cover;
             color: #ffffff;
             text-align: center;
@@ -85,6 +85,44 @@
             from { transform: scale(1); }
             to { transform: scale(1.2) rotate(10deg); }
         }
+        .slide h2, .slide p {
+    animation: flicker 2s infinite;
+}
+@keyframes flicker {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
+    70% { opacity: 0.4; }
+}
+
+        .fog {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://example.com/fog.png') repeat;
+    opacity: 0.4;
+    animation: drift 30s linear infinite;
+    pointer-events: none;
+}
+@keyframes drift {
+    from { transform: translateX(-10%); }
+    to { transform: translateX(10%); }
+}
+.glowing-eyes {
+    position: absolute;
+    width: 20px;
+    height: 10px;
+    background-color: #ff0000;
+    border-radius: 50%;
+    box-shadow: 0 0 8px rgba(255, 0, 0, 0.8);
+    animation: blink 5s infinite alternate;
+}
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
     </style>
 </head>
 <body>
@@ -92,6 +130,7 @@
 
     <!-- Spider element -->
     <div id="spider" class="spider"></div>
+<div class="fog"></div>
 
     <div id="slides">
         <div class="slide active">
