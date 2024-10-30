@@ -64,48 +64,32 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
         }
 
-        /* Spider and cobweb effects */
+        /* Spider styling */
         .spider {
             position: absolute;
-            top: -50px;
-            left: 50%;
+            top: 50px;
+            left: 50px;
             width: 30px;
             height: 30px;
             background: url('https://64.media.tumblr.com/6e826ad17e3f4517a9eb6ba4474254d1/2cba7db66e6aef91-67/s540x810/74d173dcd690f984992e14a3a90d92a35f036d58.png') no-repeat center/cover;
-            animation: crawl 10s infinite linear;
             z-index: 10;
+            transition: top 2s ease, left 2s ease;
         }
-        @keyframes crawl {
-            0% { top: -50px; left: 50%; }
-            50% { top: 80vh; left: 60%; }
-            100% { top: -50px; left: 50%; }
+        .jumpscare {
+            animation: jumpscare 0.5s ease-in-out;
         }
-
-        .cobweb {
-            position: absolute;
-            width: 100px;
-            height: 100px;
-            background: url('https://static-00.iconduck.com/assets.00/spider-web-emoji-2048x1911-rv5kr7g7.png') no-repeat center/cover;
-            opacity: 0.8;
-            pointer-events: none;
+        @keyframes jumpscare {
+            0% { transform: scale(1); }
+            50% { transform: scale(3); }
+            100% { transform: scale(1); }
         }
-        .cobweb.top-left { top: 0; left: 0; }
-        .cobweb.top-right { top: 0; right: 0; }
-        .cobweb.bottom-left { bottom: 0; left: 0; }
-        .cobweb.bottom-right { bottom: 0; right: 0; }
     </style>
 </head>
 <body>
     <h1>Évasion de la Maison Hantée avec la Maison d'Être</h1>
 
     <!-- Spider element -->
-    <div class="spider"></div>
-
-    <!-- Cobwebs in corners -->
-    <div class="cobweb top-left"></div>
-    <div class="cobweb top-right"></div>
-    <div class="cobweb bottom-left"></div>
-    <div class="cobweb bottom-right"></div>
+    <div class="spider" id="spider"></div>
 
     <div id="slides">
         <div class="slide active">
@@ -165,24 +149,35 @@
 
     <iframe width="560" height="315" src="https://www.youtube.com/embed/-AN2wZCRLQc?si=aFYaFVIx0Jd7LUcT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-    <!-- Cobwebs -->
-    <div class="cobweb top-left"></div>
-    <div class="cobweb top-right"></div>
-    <div class="cobweb bottom-left"></div>
-    <div class="cobweb bottom-right"></div>
 
-    <!-- Spider Animation -->
-    <div class="spider"></div>
-
-    <script>
+       <script>
         let currentSlide = 0;
         const slides = document.querySelectorAll('.slide');
+        const spider = document.getElementById('spider');
 
+        // Function to change slides
         function changeSlide(n) {
             slides[currentSlide].classList.remove('active');
             currentSlide = (currentSlide + n + slides.length) % slides.length;
             slides[currentSlide].classList.add('active');
+            
+            // Random chance of jumpscare
+            if (Math.random() < 0.3) { // 30% chance
+                spider.classList.add('jumpscare');
+                setTimeout(() => spider.classList.remove('jumpscare'), 500);
+            }
         }
+
+        // Function to randomly move spider
+        function moveSpider() {
+            const x = Math.random() * (window.innerWidth - 50);
+            const y = Math.random() * (window.innerHeight - 50);
+            spider.style.left = `${x}px`;
+            spider.style.top = `${y}px`;
+        }
+
+        // Move spider every few seconds
+        setInterval(moveSpider, 3000);
     </script>
 </body>
 </html>
