@@ -85,14 +85,6 @@
             from { transform: scale(1); }
             to { transform: scale(1.2) rotate(10deg); }
         }
-        .slide h2, .slide p {
-    animation: flicker 2s infinite;
-}
-@keyframes flicker {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.8; }
-    70% { opacity: 0.4; }
-}
 
         .fog {
     position: absolute;
@@ -100,7 +92,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('https://example.com/fog.png') repeat;
+    background: url('https://static.vecteezy.com/system/resources/thumbnails/009/374/897/small/fog-design-clean-alpha-free-png.png') repeat;
     opacity: 0.4;
     animation: drift 30s linear infinite;
     pointer-events: none;
@@ -108,19 +100,6 @@
 @keyframes drift {
     from { transform: translateX(-10%); }
     to { transform: translateX(10%); }
-}
-.glowing-eyes {
-    position: absolute;
-    width: 20px;
-    height: 10px;
-    background-color: #ff0000;
-    border-radius: 50%;
-    box-shadow: 0 0 8px rgba(255, 0, 0, 0.8);
-    animation: blink 5s infinite alternate;
-}
-@keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
 }
 
     </style>
