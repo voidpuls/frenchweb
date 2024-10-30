@@ -86,20 +86,36 @@
             to { transform: scale(1.2) rotate(10deg); }
         }
 
-        .fog {
-    position: absolute;
+       /* Fog container */
+.fog-container {
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/1177d997-54a5-47ed-8309-eb5d0285890a/ddwgbm7-50135889-e768-44ed-a473-9d97bf2cda03.png/v1/fill/w_1280,h_507/fog_png_transparent_8_by_agusrockforlife_ddwgbm7-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NTA3IiwicGF0aCI6IlwvZlwvMTE3N2Q5OTctNTRhNS00N2VkLTgzMDktZWI1ZDAyODU4OTBhXC9kZHdnYm03LTUwMTM1ODg5LWU3NjgtNDRlZC1hNDczLTlkOTdiZjJjZGEwMy5wbmciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.K8ZFZWbjseZDxawYby5kpYRdKQSxEOXKROJ05eAtI-Q') repeat;
-    opacity: 0.4;
-    animation: drift 30s linear infinite;
     pointer-events: none;
+    overflow: hidden;
+    z-index: 5;
+    opacity: 0.5;
 }
-@keyframes drift {
-    from { transform: translateX(-10%); }
-    to { transform: translateX(10%); }
+
+/* Individual fog particles */
+.fog {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: #ffffff;
+    opacity: 0.1;
+    filter: blur(60px);
+    border-radius: 50%;
+    animation: floatFog 10s infinite linear;
+}
+
+/* Drifting fog animation */
+@keyframes floatFog {
+    0% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(20px, -30px) scale(1.1); }
+    100% { transform: translate(-20px, 30px) scale(1); }
 }
 
     </style>
@@ -110,6 +126,14 @@
     <!-- Spider element -->
     <div id="spider" class="spider"></div>
 <div class="fog"></div>
+    <div class="fog-container">
+    <div class="fog" style="top: 10%; left: 20%; animation-duration: 15s;"></div>
+    <div class="fog" style="top: 40%; left: 50%; animation-duration: 18s;"></div>
+    <div class="fog" style="top: 70%; left: 80%; animation-duration: 12s;"></div>
+    <div class="fog" style="top: 20%; left: 70%; animation-duration: 20s;"></div>
+    <div class="fog" style="top: 60%; left: 30%; animation-duration: 17s;"></div>
+</div>
+
 
     <div id="slides">
         <div class="slide active">
